@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@import './tokens.css';
+@import './typography.css';
+@import './components.css';
+
+@theme {
+  --font-sans: "Nunito Sans", sans-serif;
+}
+
+body {
+  background-color: var(--body-bg);
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 300ms;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-duration: 300ms;
+}
