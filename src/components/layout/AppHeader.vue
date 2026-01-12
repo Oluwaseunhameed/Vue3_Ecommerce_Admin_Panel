@@ -37,7 +37,7 @@ const searchQuery = ref("");
           v-model="searchQuery"
           type="text"
           placeholder="Search..."
-          class="flex-1 bg-transparent outline-none text-sm text-text placeholder:text-muted"
+          class="flex-1 bg-transparent outline-none text-sm text-text placeholder:text-muted dark:placeholder:text-gray-400"
         />
       </div>
     </div>
