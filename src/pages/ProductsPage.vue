@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ref, computed, reactive, watch } from "vue";
-import { useRouter } from "vue-router";
+// import { useRouter } from "vue-router";
 import { Plus, Edit, Trash2, FileText } from "lucide-vue-next";
 import { saveAs } from "file-saver";
 import { v4 as uuid } from "uuid";
 import { format } from "date-fns";
 
 /* ---------------- ROUTER ---------------- */
-const router = useRouter();
+// const router = useRouter();
 
 /* ---------------- TYPES ---------------- */
 interface Product {
@@ -198,9 +198,9 @@ const paginatedProducts = computed(() => {
 });
 
 /* ---------------- ACTIONS ---------------- */
-function editProduct(id: string) {
-  router.push(`/products/edit/${id}`);
-}
+// function editProduct(id: string) {
+//   router.push(`/products/edit/${id}`);
+// }
 
 function deleteProduct(id: string) {
   if (confirm("Delete this product?")) {

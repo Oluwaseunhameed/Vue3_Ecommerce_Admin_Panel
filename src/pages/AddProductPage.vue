@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useForm } from "vee-validate";
 import * as yup from "yup";
@@ -15,9 +15,6 @@ import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 // Multiselect
 import MultiSelect from "@vueform/multiselect";
 import "@vueform/multiselect/themes/default.css";
-
-// HeadlessUI
-import { Dialog, DialogPanel, DialogTitle, TransitionRoot, TransitionChild } from "@headlessui/vue";
 
 // Icons
 import { Plus, Trash2 } from "lucide-vue-next";
@@ -58,15 +55,15 @@ const { handleSubmit, errors, resetForm, values } = useForm({
 const allCategories = ["Electronics", "Fashion", "Books", "Toys", "Home"];
 
 const isVariantModalOpen = ref(false);
-const variantForm = reactive({ name: "", price: 0 });
+// const variantForm = reactive({ name: "", price: 0 });
 
-function addVariant() {
-  if (!variantForm.name || variantForm.price <= 0) return;
-  values.variants.push({ id: uuid(), ...variantForm });
-  variantForm.name = "";
-  variantForm.price = 0;
-  isVariantModalOpen.value = false;
-}
+// function addVariant() {
+//   if (!variantForm.name || variantForm.price <= 0) return;
+//   values.variants.push({ id: uuid(), ...variantForm });
+//   variantForm.name = "";
+//   variantForm.price = 0;
+//   isVariantModalOpen.value = false;
+// }
 
 function removeVariant(id: string) {
   values.variants = values.variants.filter((v) => v.id !== id);

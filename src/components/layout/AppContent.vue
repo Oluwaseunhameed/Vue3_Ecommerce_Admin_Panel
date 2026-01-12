@@ -9,14 +9,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
 
 const props = defineProps<{ isCollapsed: boolean }>()
 
-// Optionally can be used if you want dynamic margin inside AppContent
-const contentStyle = computed(() => ({
-  marginLeft: props.isCollapsed ? '5rem' : '16rem',
-}))
 </script>
 
 <style scoped>
