@@ -1,13 +1,15 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 import { router } from "./router";
+import { seedDatabase } from "@/db/seed";
 import App from "./App.vue";
 
 import "./assets/styles/base.css";
 
-const app = createApp(App);
+async function bootstrap() {
+  await seedDatabase();
 
-app.use(createPinia());
-app.use(router);
+  createApp(App).use(createPinia()).use(router).mount("#app");
+}
 
-app.mount("#app");
+bootstrap();
