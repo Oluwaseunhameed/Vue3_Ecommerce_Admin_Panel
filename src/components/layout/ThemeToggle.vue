@@ -8,7 +8,7 @@ const { isDark, toggleTheme } = useTheme();
 <template>
   <button
     @click="toggleTheme"
-    class="p-2 rounded-md hover:bg-(--primary-soft) transition-colors"
+    class="p-2 rounded-md hover:bg-(--primary-soft) transition-colors cursor-pointer"
     aria-label="Toggle Theme"
   >
     <component :is="isDark ? Sun : Moon" class="w-5 h-5 text-(--primary)" />

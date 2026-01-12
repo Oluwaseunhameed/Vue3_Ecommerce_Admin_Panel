@@ -1,15 +1,16 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { useLayout } from "@/composables/useLayout";
+import { useSidebar } from "@/composables/useSidebar";
 import { navigation } from "@/config/navigation";
 import SidebarNavItem from "./SidebarNavItem.vue";
 import SidebarNavGroup from "./SidebarNavGroup.vue";
 
-const { sidebarOpen } = useLayout();
+// Get shared collapsed state
+const { isCollapsed } = useSidebar();
 
 const sidebarClasses = computed(() => [
   "flex flex-col border-r border-[var(--border-color)] bg-[var(--body-bg-alt)] transition-all duration-300",
-  sidebarOpen.value ? "w-64" : "w-[72px]",
+  isCollapsed.value ? "w-20" : "w-64",
 ]);
 </script>
 

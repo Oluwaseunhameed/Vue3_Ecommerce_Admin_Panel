@@ -58,5 +58,5 @@ export async function seedDatabase(): Promise<void> {
 
   await db.orders.bulkAdd(orders);
 
-  console.log("✅ Database seeded with 12 customers and 12 orders");
+  console.log("Database seeded with 12 customers and 12 orders");
 }
