@@ -67,12 +67,12 @@ const filteredCustomers = computed(() =>
   <div class="space-y-6">
     <!-- Header -->
     <div class="flex items-center justify-between">
-      <h1 class="text-xl font-semibold text-body-color">Customers</h1>
+      <h1 class="text-xl font-semibold text-(--body-color)">Customers</h1>
 
       <button
         class="rounded-md border border-(--border-color)
                px-4 py-2 text-sm
-               bg-body-bg-alt hover:bg-primary-soft"
+               bg-(--body-bg-alt) hover:bg-(--primary-soft)"
       >
         Export
       </button>
@@ -95,9 +95,9 @@ const filteredCustomers = computed(() =>
     </div>
 
     <!-- Table -->
-    <div class="overflow-hidden rounded-lg border border-(--border-color) bg-body-bg-alt">
+    <div class="overflow-hidden rounded-lg border border-(--border-color) bg-(--body-bg-alt)">
       <table class="w-full text-md">
-        <thead class="bg-body-bg">
+        <thead class="bg-(--body-bg)">
           <tr>
             <th class="px-4 py-3 text-left">Customer</th>
             <th class="px-4 py-3 text-left">Email</th>
@@ -114,7 +114,7 @@ const filteredCustomers = computed(() =>
             v-for="c in filteredCustomers"
             :key="c.id"
             class="group border-t border-(--border-color)
-                   hover:bg-body-bg transition cursor-pointer"
+                   hover:bg-(--body-bg) transition cursor-pointer"
             @click="router.push(`/customers/${c.id}`)"
           >
             <td class="flex items-center gap-3 px-4 py-3">
@@ -131,8 +131,8 @@ const filteredCustomers = computed(() =>
               <span
                 class="rounded-full px-2 py-1 text-xs capitalize"
                 :class="c.status === 'active'
-                  ? 'bg-success/10 text-success'
-                  : 'bg-danger/10 text-danger'"
+                  ? 'bg-(--success)/10 text-(--success)'
+                  : 'bg-(--danger)/10 text-(--danger)'"
               >
                 {{ c.status }}
               </span>
@@ -145,8 +145,8 @@ const filteredCustomers = computed(() =>
                 class="inline-flex items-center justify-center
                        h-8 w-8 rounded-md
                        border border-(--border-color)
-                       text-body-color
-                       hover:bg-primary-soft hover:text-primary
+                       text-(--body-color)
+                       hover:bg-(--primary-soft) hover:text-(--primary)
                        transition"
                 @click.stop="router.push(`/customers/${c.id}`)"
               >

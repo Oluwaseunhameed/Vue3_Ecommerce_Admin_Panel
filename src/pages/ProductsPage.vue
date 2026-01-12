@@ -248,7 +248,7 @@ watch(filters, () => (currentPage.value = 1), { deep: true });
 </style>
 
 <template>
-  <div class="max-w-7xl mx-auto p-6 space-y-6 text-body-color">
+  <div class="max-w-7xl mx-auto p-6 space-y-6 text-(--body-color)">
 
     <!-- HEADER -->
     <div class="flex justify-between items-center">
@@ -265,7 +265,7 @@ watch(filters, () => (currentPage.value = 1), { deep: true });
 
         <button
           @click="$router.push('/products/new')"
-          class="flex items-center gap-2 px-4 py-2 bg-(--primary) text-white rounded-md hover:bg-success-dark cursor-pointer"
+          class="flex items-center gap-2 px-4 py-2 bg-(--primary) text-white rounded-md hover:bg-(--primary)/90 cursor-pointer"
         >
           <Plus class="w-5 h-5" />
           Add Product
@@ -276,7 +276,7 @@ watch(filters, () => (currentPage.value = 1), { deep: true });
     <!-- Filters -->
     <div
       class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4
-            bg-body-bg-alt border border-(--border-color)
+            bg-(--body-bg-alt) border border-(--border-color)
             rounded-lg"
     >
       <!-- Search -->
@@ -338,7 +338,7 @@ watch(filters, () => (currentPage.value = 1), { deep: true });
     <!-- TABLE -->
     <div class="overflow-x-auto border border-(--border-color) rounded-md">
       <table class="min-w-full text-left">
-        <thead class="bg-body-bg-alt border-b border-(--border-color)">
+        <thead class="bg-(--body-bg-alt) border-b border-(--border-color)">
           <tr>
             <th class="px-4 py-2">Thumbnail</th>
             <th class="px-4 py-2">Name</th>
@@ -356,7 +356,7 @@ watch(filters, () => (currentPage.value = 1), { deep: true });
             v-for="product in paginatedProducts"
             :key="product.id"
             class="border-b border-(--border-color)
-                   hover:bg-body-bg-alt/50"
+                   hover:bg-(--body-bg-alt)/50"
           >
             <td class="px-4 py-2">
               <img
@@ -370,7 +370,7 @@ watch(filters, () => (currentPage.value = 1), { deep: true });
             <td class="px-4 py-2">${{ product.price }}</td>
             <td
               class="px-4 py-2"
-              :class="product.stock > 0 ? 'text-success' : 'text-danger'"
+              :class="product.stock > 0 ? 'text-(--success)' : 'text-(--danger)'"
             >
               {{ product.stock > 0 ? "In Stock" : "Out of Stock" }}
             </td>
@@ -380,7 +380,7 @@ watch(filters, () => (currentPage.value = 1), { deep: true });
             <td class="px-4 py-2 flex gap-2">
               <button
                 
-                class="p-1 rounded bg-primary text-(--primary) hover:bg-(--primary-soft) cursor-pointer"
+                class="p-1 rounded bg-(--primary-soft) text-(--primary) hover:bg-(--primary-soft) cursor-pointer"
               >
                 <Edit class="w-4 h-4" />
               </button>
@@ -404,7 +404,7 @@ watch(filters, () => (currentPage.value = 1), { deep: true });
           @click="prevPage"
           :disabled="currentPage === 1"
           class="px-3 py-1 rounded border border-(--border-color)
-                 disabled:opacity-50"
+                 disabled:opacity-50 cursor-pointer"
         >
           Prev
         </button>
@@ -412,7 +412,7 @@ watch(filters, () => (currentPage.value = 1), { deep: true });
           @click="nextPage"
           :disabled="currentPage === totalPages"
           class="px-3 py-1 rounded border border-(--border-color)
-                 disabled:opacity-50"
+                 disabled:opacity-50 cursor-pointer"
         >
           Next
         </button>

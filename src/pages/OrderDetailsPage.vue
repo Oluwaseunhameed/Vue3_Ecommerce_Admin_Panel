@@ -33,7 +33,7 @@ const timeline = ref([
     <!-- Header -->
     <div class="flex justify-between items-center">
       <h1 class="text-xl font-semibold">Order {{ order.id }}</h1>
-      <span class="rounded-full bg-success/10 text-success px-3 py-1 text-sm">
+      <span class="rounded-full bg-(--success)/10 text-(--success) px-3 py-1 text-sm">
         {{ order.status }}
       </span>
     </div>
@@ -63,7 +63,7 @@ const timeline = ref([
     </div>
 
     <!-- Items -->
-    <div class="rounded-lg border border-(--border-color) bg-body-bg-alt">
+    <div class="rounded-lg border border-(--border-color) bg-(--body-bg-alt)">
       <h3 class="px-6 py-4 font-semibold border-b border-(--border-color)">
         Order Items
       </h3>
@@ -99,7 +99,7 @@ const timeline = ref([
 
 
     <!-- Timeline -->
-    <div class="rounded-lg border border-(--border-color) bg-body-bg-alt p-6">
+    <div class="rounded-lg border border-(--border-color) bg-(--body-bg-alt) p-6">
       <h3 class="font-semibold mb-6">Order Timeline</h3>
 
       <div class="relative space-y-6">
@@ -113,16 +113,16 @@ const timeline = ref([
         >
           <!-- Dot -->
           <div
-            class="h-4 w-4 rounded-full bg-primary
-                  ring-4 ring-primary-soft z-10"
+            class="h-4 w-4 rounded-full bg-(--primary)
+                  ring-4 ring-(--primary-soft) z-10"
           />
 
           <!-- Content -->
           <div class="pb-2">
-            <p class="font-medium text-body-color">
+            <p class="font-medium text-(--body-color)">
               {{ t.label }}
             </p>
-            <p class="text-xs text-muted mt-0.5">
+            <p class="text-xs text-(--muted) mt-0.5">
               {{ formatDate(t.date) }}
             </p>
           </div>

@@ -114,7 +114,7 @@ function exportCSV() {
       <button
         @click="exportCSV"
         class="flex items-center gap-2 rounded-md border border-(--border-color)
-               px-4 py-2 bg-body-bg-alt hover:bg-primary-soft"
+               px-4 py-2 bg-(--body-bg-alt) hover:bg-(--primary-soft)"
       >
         <FileText class="h-4 w-4" />
         Export
@@ -136,9 +136,9 @@ function exportCSV() {
     </div>
 
     <!-- Table -->
-    <div class="overflow-hidden rounded-lg border border-(--border-color) bg-body-bg-alt">
+    <div class="overflow-hidden rounded-lg border border-(--border-color) bg-(--body-bg-alt)">
       <table class="w-full text-md">
-        <thead class="bg-body-bg">
+        <thead class="bg-(--body-bg)">
           <tr>
             <th class="px-4 py-3 text-left">
               <input type="checkbox" v-model="allSelected" />
@@ -156,7 +156,7 @@ function exportCSV() {
             v-for="o in filteredOrders"
             :key="o.id"
             class="group border-t border-(--border-color)
-                  hover:bg-body-bg transition cursor-pointer"
+                  hover:bg-(--body-bg) transition cursor-pointer"
             @click="router.push(`/orders/${o.id}`)"
           >
             <td class="px-4 py-3">
@@ -170,7 +170,7 @@ function exportCSV() {
 
             <td class="px-4 py-3 font-medium">
               <div>{{ o.customer }}</div>
-              <div class="text-xs text-muted">{{ o.email }}</div>
+              <div class="text-xs text-(--muted)">{{ o.email }}</div>
             </td>
 
             <td class="px-4 py-3">
@@ -181,10 +181,10 @@ function exportCSV() {
               <span
                 class="rounded-full px-2 py-1 text-xs capitalize"
                 :class="{
-                  'bg-success/10 text-success': o.status === 'completed',
-                  'bg-warning/10 text-warning': o.status === 'pending',
-                  'bg-primary-soft text-primary': o.status === 'processing',
-                  'bg-danger/10 text-danger': o.status === 'cancelled',
+                  'bg-(--success)/10 text-(--success)': o.status === 'completed',
+                  'bg-(--warning)/10 text-(--warning)': o.status === 'pending',
+                  'bg-(--primary-soft) text-(--primary)': o.status === 'processing',
+                  'bg-(--danger)/10 text-(--danger)': o.status === 'cancelled',
                 }"
               >
                 {{ o.status }}
@@ -202,8 +202,8 @@ function exportCSV() {
                 class="inline-flex items-center justify-center
                       h-8 w-8 rounded-md
                       border border-(--border-color)
-                      text-body-color
-                      hover:bg-primary-soft hover:text-primary
+                      text-(--body-color)
+                      hover:bg-(--primary-soft) hover:text-(--primary)
                       transition"
                 @click.stop="router.push(`/orders/${o.id}`)"
               >

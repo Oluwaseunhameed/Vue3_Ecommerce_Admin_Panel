@@ -32,7 +32,7 @@ const orders = ref<Order[]>([
 <template>
   <div class="space-y-6">
     <!-- Profile -->
-    <div class="flex items-center gap-6 rounded-lg bg-body-bg-alt border border-(--border-color) p-6">
+    <div class="flex items-center gap-6 rounded-lg bg-(--body-bg-alt) border border-(--border-color) p-6">
       <img :src="customer.avatar" class="h-20 w-20 rounded-full" />
       <div>
         <h2 class="text-lg font-semibold">{{ customer.name }}</h2>
@@ -42,10 +42,10 @@ const orders = ref<Order[]>([
     </div>
 
     <!-- Orders -->
-    <div class="rounded-lg border border-(--border-color) bg-body-bg-alt">
+    <div class="rounded-lg border border-(--border-color) bg-(--body-bg-alt)">
       <h3 class="px-6 py-4 font-semibold">Orders</h3>
       <table class="w-full text-md">
-        <thead class="bg-body-bg">
+        <thead class="bg-(--body-bg)">
           <tr>
             <th class="px-6 py-3 text-left">Date</th>
             <th class="px-6 py-3 text-left">Amount</th>
@@ -64,8 +64,8 @@ const orders = ref<Order[]>([
               <span
                 class="rounded-full px-2 py-1 text-xs"
                 :class="o.status === 'completed'
-                  ? 'bg-success/10 text-success'
-                  : 'bg-warning/10 text-warning'"
+                  ? 'bg-(--success)/10 text-(--success)'
+                  : 'bg-(--warning)/10 text-(--warning)'"
               >
                 {{ o.status }}
               </span>
