@@ -8,8 +8,8 @@ defineProps<{
 
 <template>
   <thead
-    class="border-b border-[var(--border-color)]
-           bg-[var(--body-bg)]"
+    class="border-b border-(--border-color)
+           bg-(--body-bg)"
   >
     <tr>
       <th

@@ -17,17 +17,18 @@ const router = useRouter()
 const { isCollapsed } = useSidebar()
 const { closeMobileSidebar } = useLayout()
 
-// Active route
 const isActive = computed(() => route.name === props.routeName)
 
-// Navigation function
 function navigate() {
   if (!isActive.value) router.push({ name: props.routeName })
   if (window.innerWidth < 768) closeMobileSidebar()
 }
 
-// Focus & hover classes (DRY)
-const baseClasses = 'group flex items-center rounded-md px-3 py-3 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+const baseClasses =
+  'group flex items-center select-none rounded-md px-3 py-3 transition-colors cursor-pointer ' +
+  'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ' +
+  'focus-visible:ring-offset-2 focus-visible:ring-offset-(--body-bg-alt)'
+
 const activeClasses = 'bg-primary-soft font-semibold'
 const hoverClasses = 'hover:bg-primary-soft/40'
 </script>
@@ -45,11 +46,12 @@ const hoverClasses = 'hover:bg-primary-soft/40'
       v-if="icon"
       :is="icon"
       class="w-5 h-5 shrink-0 transition-colors"
-      :class="isActive ? 'text-(--sidebar-icon) font-semibold' : 'text-text'"
+      :class="isActive ? 'text-(--sidebar-icon)' : 'text-text'"
     />
+
     <span
       v-if="!isCollapsed"
-      class="ml-3 text-[15px] transition-colors"
+      class="ml-3 text-[15px]"
       :class="isActive ? 'font-semibold text-(--sidebar-text)' : 'font-medium text-text'"
     >
       {{ label }}

@@ -8,17 +8,13 @@ defineProps<{
 </script>
 
 <template>
-  <div
-    class="overflow-x-auto rounded-xl border
-           border-[var(--border-color)]
-           bg-[var(--body-bg-alt)]
-           shadow-phoenix"
-  >
-    <table class="w-full text-sm text-[var(--body-color)]">
+  <div class="overflow-x-auto rounded-xl border border-(--border-color) bg-(--body-bg-alt) shadow-phoenix">
+    <table class="w-full text-sm text-(--body-color)">
       <TableHeader :columns="columns" />
       <tbody>
         <slot />
       </tbody>
     </table>
   </div>
+
 </template>
